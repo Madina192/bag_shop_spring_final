@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal page</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="/">Book Store</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="available_books">Available Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="my_books">My Books</a>
+                </li>
+            </ul>
+            <div>
+                <a href="login" class="nav-link text-white">Login</a>
+            </div>
+            <div>
+                <a href="register" class="nav-link text-white">Signup</a>
+            </div>
+            <div>
+                <a class="nav-link text-white " href="book_register">New Book Register</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<h1>Welcome to the personal page <span th:text="${userLogin}"></span></h1>
+</body>
+</html>
