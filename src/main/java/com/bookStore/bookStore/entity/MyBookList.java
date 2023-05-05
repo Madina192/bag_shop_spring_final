@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="MyBooks")
+@Table(name="my_bags")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,5 +20,4 @@ public class MyBookList {
     private String author;
     private String price;
     private String image_url;
-
 }
