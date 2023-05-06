@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" th:href="@{/css/menu.css}">
-  <title>Book Store</title>
+  <title>Bag Shop</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light">
@@ -90,458 +90,455 @@
           </li>
         </ul>
         <div class="menu-tabs__content" id="tab1">
-            <div class="columns">
+            <div class="columns" th:each="b :${book}">
               <div class="menu-tabs-card">
                 <div class="menu-tabs-card__left">
-                  <img src="/images/b1.jpg" alt="" class="menu-tabs-card__img">
+                  <img th:src="${b.image_url}" class="menu-tabs-card__img">
                 </div>
                 <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Dreams
-                    <span class="menu-tabs-card__price">
-                                                $ 9.20 USD
-                                            </span>
+                  <h3 class="menu-tabs-card__title" th:text="${b.name}">
+                    <span class="menu-tabs-card__price" th:text="${b.price}"></span>
                   </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
+                  <p class="menu-tabs-card__descr" th:text="${b.author}"></p>
                   <input type="text" class="menu-tabs-card__num" value="1" min="0">
                   <button class="menu-tabs-card__addToCardBtn">
-                    <a >Add to cart</a>
+                    <a th:href="@{/myList/{id}(id=${b.id})}">Add to cart</a>
                   </button>
                 </div>
               </div>
             </div>
-            <div class="columns">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/b2.webp
-                                        " alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Waldo
-                    <span class="menu-tabs-card__price">
-                                                $ 10.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="columns">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/b3.jfif" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Cali
-                    <span class="menu-tabs-card__price">$ 8.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="columns">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/b4.png" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Bacon
-                    <span class="menu-tabs-card__price">
-                                                $ 9.99 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="columns">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/b5.png" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Spicy
-                    <span class="menu-tabs-card__price">
-                                                $ 9.20 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="columns">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/b6.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Classic
-                    <span class="menu-tabs-card__price">
-                                                $ 8.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="columns">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/b7.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Spicy
-                    <span class="menu-tabs-card__price">
-                                                $ 9.20 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="columns">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/b8.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Classic
-                    <span class="menu-tabs-card__price">
-                                                $ 8.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
+<!--            <div class="columns">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/b2.webp-->
+<!--                                        " alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Waldo-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 10.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="columns">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/b3.jfif" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Cali-->
+<!--                    <span class="menu-tabs-card__price">$ 8.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="columns">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/b4.png" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Bacon-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 9.99 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="columns">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/b5.png" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Spicy-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 9.20 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="columns">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/b6.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Classic-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 8.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="columns">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/b7.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Spicy-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 9.20 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="columns">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/b8.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Classic-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 8.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
         </div>
         <div class="menu-tabs__content" id="tab2">
-          <div class="row">
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/p1.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Dreams
-                    <span class="menu-tabs-card__price">
-                                                $ 9.20 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/p2.webp" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Waldo
-                    <span class="menu-tabs-card__price">
-                                                $ 10.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/p3.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Cali
-                    <span class="menu-tabs-card__price">$ 8.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/p4.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Bacon
-                    <span class="menu-tabs-card__price">
-                                                $ 9.99 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/p5.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Spicy
-                    <span class="menu-tabs-card__price">
-                                                $ 9.20 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/p6.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Classic
-                    <span class="menu-tabs-card__price">
-                                                $ 8.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/p7.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Spicy
-                    <span class="menu-tabs-card__price">
-                                                $ 9.20 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/p8.webp" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Classic
-                    <span class="menu-tabs-card__price">
-                                                $ 8.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
+<!--          <div class="row">-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/p1.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Dreams-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 9.20 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/p2.webp" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Waldo-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 10.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/p3.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Cali-->
+<!--                    <span class="menu-tabs-card__price">$ 8.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/p4.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Bacon-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 9.99 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/p5.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Spicy-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 9.20 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/p6.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Classic-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 8.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/p7.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Spicy-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 9.20 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/p8.webp" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Classic-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 8.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
         <div class="menu-tabs__content" id="tab3">
-          <div class="row">
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/sh1.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Dreams
-                    <span class="menu-tabs-card__price">
-                                                $ 9.20 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/sh2.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Waldo
-                    <span class="menu-tabs-card__price">
-                                                $ 10.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/sh3.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Cali
-                    <span class="menu-tabs-card__price">$ 8.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/sh4.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Bacon
-                    <span class="menu-tabs-card__price">
-                                                $ 9.99 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/sh5.webp" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Spicy
-                    <span class="menu-tabs-card__price">
-                                                $ 9.20 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/sh6.png" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Classic
-                    <span class="menu-tabs-card__price">
-                                                $ 8.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/sh7.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Spicy
-                    <span class="menu-tabs-card__price">
-                                                $ 9.20 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="menu-tabs-card">
-                <div class="menu-tabs-card__left">
-                  <img src="/images/sh8.jpg" alt="" class="menu-tabs-card__img">
-                </div>
-                <div class="menu-tabs-card__right">
-                  <h3 class="menu-tabs-card__title">
-                    Burger Classic
-                    <span class="menu-tabs-card__price">
-                                                $ 8.00 USD
-                                            </span>
-                  </h3>
-                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
+<!--          <div class="row">-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/sh1.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Dreams-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 9.20 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/sh2.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Waldo-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 10.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/sh3.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Cali-->
+<!--                    <span class="menu-tabs-card__price">$ 8.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/sh4.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Bacon-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 9.99 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/sh5.webp" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Spicy-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 9.20 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/sh6.png" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Classic-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 8.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row">-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/sh7.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Spicy-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 9.20 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text.</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-6">-->
+<!--              <div class="menu-tabs-card">-->
+<!--                <div class="menu-tabs-card__left">-->
+<!--                  <img src="/images/sh8.jpg" alt="" class="menu-tabs-card__img">-->
+<!--                </div>-->
+<!--                <div class="menu-tabs-card__right">-->
+<!--                  <h3 class="menu-tabs-card__title">-->
+<!--                    Burger Classic-->
+<!--                    <span class="menu-tabs-card__price">-->
+<!--                                                $ 8.00 USD-->
+<!--                                            </span>-->
+<!--                  </h3>-->
+<!--                  <p class="menu-tabs-card__descr">Lorem Ipsum is simply dummy text .</p>-->
+<!--                  <input type="text" class="menu-tabs-card__num" value="1" min="0">-->
+<!--                  <button class="menu-tabs-card__addToCardBtn">Add to cart</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
       </div>
     </div>

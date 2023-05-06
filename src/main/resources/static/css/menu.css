@@ -176,7 +176,8 @@
 
 .menu-tabs__btn:last-child {
         margin-right: 0;
-      }
+}
+
 .columns {
     width: 540px;
     display: inline-block;
