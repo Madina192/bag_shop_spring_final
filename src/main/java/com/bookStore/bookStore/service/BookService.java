@@ -26,4 +26,8 @@ public class BookService {
     public void deleteById(int id) {
         bRepo.deleteById(id);
     }
+
+    public List<Book> findBooksByKeyword(String keyword){
+        return bRepo.findBooksByKeyword(keyword);
+    }
 }

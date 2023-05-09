@@ -1,20 +1,18 @@
-package com.bookStore.bookStore.controller;
+package com.bookStore.bookStore.swagger;
+
 import com.bookStore.bookStore.entity.Book;
 import com.bookStore.bookStore.entity.MyBookList;
 import com.bookStore.bookStore.service.BookService;
 import com.bookStore.bookStore.service.MyBookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-import java.util.*;
 
-import static com.bookStore.bookStore.swagger.SwaggerApi.sortBags;
+import java.util.List;
 
-@Controller
-
-public class BookController {
+@RestController
+@RequestMapping("/api")
+public class SwaggerApi {
     @Autowired
     private BookService service;
 
@@ -29,20 +27,32 @@ public class BookController {
     public String bookRegister() {
         return "bookRegister";
     }
+
     @GetMapping("/available_books")
     public String getAllBooks(Model model){
         return sortBags(model, service);
     }
+
+    public static String sortBags(Model model, BookService service) {
+        List<Book> listBackpack= service.findBooksByKeyword("backpack");
+        List<Book>listPurse= service.findBooksByKeyword("purses");
+        List<Book>listShopper= service.findBooksByKeyword("shopper");
+        model.addAttribute("backpack", listBackpack);
+        model.addAttribute("purses", listPurse);
+        model.addAttribute("shopper", listShopper);
+        return "bookList";
+    }
+
     @GetMapping("/my_books")
-    public String getMyBooks(Model model) {
+    public List<MyBookList> getMyBooks(Model model) {
         List<MyBookList>list = myBookService.getAllMyBooks();
         model.addAttribute("book",list);
-        return "MyBooks";
+        return myBookService.getAllMyBooks();
     }
     @PostMapping("/save")
-    public String addBook(@ModelAttribute Book book) {
+    public void addBook(@ModelAttribute Book book) {
         service.save(book);
-        return "redirect:/available_books";
+
     }
     @RequestMapping("/myList/{id}")
     public String getMyList(@PathVariable("id") int id) {
