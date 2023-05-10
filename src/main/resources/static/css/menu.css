@@ -67,7 +67,9 @@
     margin-right: 30px;
 }
 .menu-tabs-card__right {
+    max-width: 300px;
     margin-top: 40px;
+    position: relative;
 }
 
 
@@ -80,38 +82,20 @@
         color: #08090a;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
 
 .menu-tabs-card__price {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 20px;
+        font-weight: bold;
+        font-size: 20px;
         color: #35b8be;
+    margin-right: 10px;
+    margin-left: 10px;
       }
 
 .menu-tabs-card__descr {
-        margin-bottom: 25px;
-      }
-
-.menu-tabs-card__num {
-        background: #fafafa;
-        border: 1px solid #dddddd;
-        box-sizing: border-box;
-        border-radius: 6px;
-        max-width: 70px;
-        height: 45px;
-        padding: 0 26px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 27px;
-        text-align: center;
-        letter-spacing: 0.36px;
-        color: #000000;
-        outline: none;
-        margin-right: 8px;
+    margin-top: 15px;
+    margin-bottom: 25px;
       }
 
 .menu-tabs-card__addToCardBtn {

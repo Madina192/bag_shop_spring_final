@@ -71,13 +71,18 @@
                 </div>
                 <div class="menu-tabs-card__right">
                   <h3 class="menu-tabs-card__title" th:text="${b.name}">
-                    <span class="menu-tabs-card__price" th:text="${b.price}"></span>
                   </h3>
+                  <span style="color: #35b8be; font-weight: bold">$</span>
+                  <span class="menu-tabs-card__price" th:text="${b.price}"></span>
+                  <span style="color: #35b8be; font-weight: bold">USD</span>
                   <p class="menu-tabs-card__descr" th:text="${b.author}"></p>
-                  <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                  <button class="menu-tabs-card__addToCardBtn">
-                    <a th:href="@{/myList/{id}(id=${b.id})}">Add to cart</a>
-                  </button>
+                  <div class="d-flex justify-content-between">
+                    <a style="color:red; font-size: 35px; margin-right: 20px" th:href="@{/deleteBook/{id}(id=${b.id})}">
+                      <i class="fa-solid fa-trash"></i></a>
+                    <button class="menu-tabs-card__addToCardBtn">
+                      <a th:href="@{/myList/{id}(id=${b.id})}">Add to cart</a>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div></div>
@@ -88,14 +93,18 @@
                 <img th:src="${b.image_url}" class="menu-tabs-card__img">
               </div>
               <div class="menu-tabs-card__right">
-                <h3 class="menu-tabs-card__title" th:text="${b.name}">
-                  <span class="menu-tabs-card__price" th:text="${b.price}"></span>
-                </h3>
+                <h3 class="menu-tabs-card__title" th:text="${b.name}"></h3>
+                <span style="color: #35b8be; font-weight: bold">$</span>
+                <span class="menu-tabs-card__price" th:text="${b.price}"></span>
+                <span style="color: #35b8be; font-weight: bold">USD</span>
                 <p class="menu-tabs-card__descr" th:text="${b.author}"></p>
-                <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                <button class="menu-tabs-card__addToCardBtn">
-                  <a th:href="@{/myList/{id}(id=${b.id})}">Add to cart</a>
-                </button>
+                <div class="d-flex justify-content-between">
+                  <a style="color:red; font-size: 35px; margin-right: 20px" th:href="@{/deleteBook/{id}(id=${b.id})}">
+                    <i class="fa-solid fa-trash"></i></a>
+                  <button class="menu-tabs-card__addToCardBtn">
+                    <a th:href="@{/myList/{id}(id=${b.id})}">Add to cart</a>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -107,14 +116,18 @@
                 <img th:src="${b.image_url}" class="menu-tabs-card__img">
               </div>
               <div class="menu-tabs-card__right">
-                <h3 class="menu-tabs-card__title" th:text="${b.name}">
-                  <span class="menu-tabs-card__price" th:text="${b.price}"></span>
-                </h3>
+                <h3 class="menu-tabs-card__title" th:text="${b.name}"></h3>
+                <span style="color: #35b8be; font-weight: bold">$</span>
+                <span class="menu-tabs-card__price" th:text="${b.price}"></span>
+                <span style="color: #35b8be; font-weight: bold">USD</span>
                 <p class="menu-tabs-card__descr" th:text="${b.author}"></p>
-                <input type="text" class="menu-tabs-card__num" value="1" min="0">
-                <button class="menu-tabs-card__addToCardBtn">
-                  <a th:href="@{/myList/{id}(id=${b.id})}">Add to cart</a>
-                </button>
+                <div class="d-flex justify-content-between">
+                  <a style="color:red; font-size: 35px; margin-right: 20px" th:href="@{/deleteBook/{id}(id=${b.id})}">
+                    <i class="fa-solid fa-trash"></i></a>
+                  <button class="menu-tabs-card__addToCardBtn">
+                    <a th:href="@{/myList/{id}(id=${b.id})}">Add to cart</a>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
