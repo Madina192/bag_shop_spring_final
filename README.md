@@ -25,7 +25,7 @@
 ## If you entered incorrect data, you'll ger an error:
 ![](bag_11.png)
 ## When you signed in it redirects you to personal page:
-![](book_12.png)
+![](bag_12.png)
 # Database schema:
 ![](bag_13.png)
 ## pgAdmin screenshots:
