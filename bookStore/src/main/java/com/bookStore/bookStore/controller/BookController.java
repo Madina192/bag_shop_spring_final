@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import java.util.*;
 
+import static com.bookStore.bookStore.swagger.SwaggerApi.sortBags;
+
 @Controller
 
 public class BookController {
@@ -28,12 +30,8 @@ public class BookController {
         return "bookRegister";
     }
     @GetMapping("/available_books")
-    public ModelAndView getAllBooks(){
-        List<Book>list=service.getAllBook();
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("bookList");
-        modelAndView.addObject("book", list);
-        return modelAndView;
+    public String getAllBooks(Model model){
+        return sortBags(model, service);
     }
     @GetMapping("/my_books")
     public String getMyBooks(Model model) {
@@ -49,7 +47,7 @@ public class BookController {
     @RequestMapping("/myList/{id}")
     public String getMyList(@PathVariable("id") int id) {
         Book b=service.getBookById(id);
-        MyBookList mb = new MyBookList(b.getId(), b.getName(), b.getAuthor(), b.getPrice());
+        MyBookList mb = new MyBookList(b.getId(), b.getName(), b.getAuthor(), b.getPrice(), b.getImage_url());
         myBookService.saveMyBooks(mb);
         return "redirect:/my_books";
     }
