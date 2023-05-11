@@ -222,3 +222,13 @@ button {
     width: 600px;
     margin-bottom: 70px;
 }
+
+.error-image {
+    width: 350px;
+    height: 280px;
+    border-radius: 5%;
+}
+
+.error-image-box {
+    margin: 0 auto;
+}
