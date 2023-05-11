@@ -1,5 +1,7 @@
 # Online Bag Shop
 ## We made it together -> Akpaeva Madina and Mamatzhalilova Bermet
+## Link to deployed website : https://bagshopspringfinal-production.up.railway.app/
+## Link to project presentation: 
 ## The online bag shop application is built using the Spring Boot framework with Spring Data, Spring Security, Postgres Database.
 ## Home page
 ## There's a carousel of pictures of handbags. Clicking on which will take you to the catalog page:
@@ -35,6 +37,12 @@
 ![](bag_15.png)
 ## My Bags list:
 ![](bag_16.png)
+## Swagger API screenshots:
+![](bag_17.png)
+![](bag_18.png)
+
+
+
 
 
 ```properties
