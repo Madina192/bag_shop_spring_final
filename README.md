@@ -1,5 +1,5 @@
 # Online Bag Shop
-## We made it together -> Akpaeva Madina and Mamatzhalilova Bermet
+## We did this project together -> Akpaeva Madina and Mamatzhalilova Bermet
 ## Link to deployed website : https://bagshopspringfinal-production.up.railway.app/
 ## Link to project presentation: 
 ## The online bag shop application is built using the Spring Boot framework with Spring Data, Spring Security, Postgres Database.
